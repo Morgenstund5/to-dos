@@ -1,0 +1,258 @@
+/* Reset and basic styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f6fa;
+  color: #333;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 60px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 0 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+#sidebar-toggle {
+  position: absolute;
+  left: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Layout */
+main {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar */
+.side-bar {
+  width: 250px;
+  background-color: #2f3640;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.side-bar p {
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: background 0.2s;
+}
+
+.side-bar p:hover {
+  background-color: #353b48;
+  border-radius: 4px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.projects h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.projects ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.projects li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #353b48;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.projects li:hover {
+    background-color: #606266;
+    transition: 0.3s;
+}
+
+.projects li .actions button {
+  background: none;
+  border: none;
+  color: #f5f6fa;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+#add-project {
+  padding: 0.5rem;
+  background-color: #40739e;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  margin-top: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#add-project:hover {
+  background-color: #487eb0;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.main-content h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.todos {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.todo-card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  width: 280px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.todo-card .todo-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.todo-card .todo-date {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.priority {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.important {
+  background-color: #e84118;
+  color: #fff;
+}
+
+.not-important {
+  background-color: #dcdde1;
+  color: #333;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.todo-actions button {
+  flex: 1;
+  padding: 0.4rem 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.done-btn {
+  background-color: #44bd32;
+  color: #fff;
+}
+
+.not-done-btn {
+  background-color: #fbc531;
+  color: #fff;
+}
+
+.edit-btn {
+  background-color: #00a8ff;
+  color: #fff;
+}
+
+.delete-btn {
+  background-color: #e84118;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .side-bar {
+    position: absolute;
+    left: -260px;
+    top: 60px;
+    height: calc(100% - 60px);
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .side-bar.active {
+    left: 0;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <body>
+  <header>
+    <button id="sidebar-toggle">☰</button>
+    <h1>Todo App</h1>
+  </header>
+
+  <main>
+    <aside class="side-bar">
+        <div class="default-sections">
+        <p>All To-Do's</p>
+        <p>Today's</p>
+        <p>Important</p>
+      </div>
+
+      <div class="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li>
+            <span class="project-title">Project 1</span>
+            <div class="actions">
+              <button><i class="fa-solid fa-pencil"></i></button>
+              <button><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </li>
+          <li>
+            <span class="project-title">Project 2</span>
+            <div class="actions">
+              <button><i class="fa-solid fa-pencil"></i></button>
+              <button><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </li>
+        </ul>
+        <button id="add-project">+ Add Project</button>
+      </div>
+    </aside>
+
+    <div class="main-content">
+        <h2>Todos</h2>
+        <div class="todos">
+        <div class="todo-card">
+          <span class="todo-title">Sample Todo 1</span>
+          <p class="todo-description">Description for sample todo</p>
+          <span class="todo-date">Due: 2025-08-30</span>
+          <span class="priority important">Important</span>
+          <div class="todo-actions">
+            <button class="not-done-btn">Not Done</button>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+
+        <div class="todo-card">
+          <span class="todo-title">Sample Todo 2</span>
+          <p class="todo-description">Another description</p>
+          <span class="todo-date">Due: 2025-09-02</span>
+          <span class="priority not-important">Not Important</span>
+          <div class="todo-actions">
+            <button class="done-btn">Done</button>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+        <div class="todo-card">
+          <span class="todo-title">Sample Todo 1</span>
+          <p class="todo-description">Description for sample todo</p>
+          <span class="todo-date">Due: 2025-08-30</span>
+          <span class="priority important">Important</span>
+          <div class="todo-actions">
+            <button class="not-done-btn">Not Done</button>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+        <div class="todo-card">
+          <span class="todo-title">Sample Todo 1</span>
+          <p class="todo-description">Description for sample todo</p>
+          <span class="todo-date">Due: 2025-08-30</span>
+          <span class="priority important">Important</span>
+          <div class="todo-actions">
+            <button class="not-done-btn">Not Done</button>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+        <div class="todo-card">
+          <span class="todo-title">Sample Todo 1</span>
+          <p class="todo-description">Description for sample todo</p>
+          <span class="todo-date">Due: 2025-08-30</span>
+          <span class="priority important">Important</span>
+          <div class="todo-actions">
+            <button class="not-done-btn">Not Done</button>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+    
+   
+
+  <footer>
+    <p>© 2025 Todo App</p>
+  </footer>
+</body>
+
+
+  <script defer src="./index.js"></script>
+</body>
+</html>
