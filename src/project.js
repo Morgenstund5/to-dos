@@ -7,14 +7,14 @@ export class Project {
         this.todos = [];
     }
 
-    addTodo(index, title, desc, dueDate, priority, done = false) { // change INDEX for ID later !!!
+    addTodo(title, desc, dueDate, priority, done = false) { // change INDEX for ID later !!!
         const todo = new Todo(title, desc, dueDate, priority, done);
         this.todos.push(todo)
     }
 
     editProject(id, name, array) {
-    const selectedProject = array[id]
-    selectedProject.name = name
+        const selectedProject = array.find(project => project.id === id)
+        selectedProject.name = name
     }
 }
 
@@ -28,6 +28,8 @@ export function deleteProject(index, array) {
     array.splice(index, 1);
 }
 
-
+/*export function createTodo(title, desc, dueDate, priority, done = false) {
+    Project.prototype.addTodo()
+}*/
 
  

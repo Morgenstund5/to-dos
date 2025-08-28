@@ -11,7 +11,3 @@ export class Todo {
     }
 }
 
-export function CreateTodo(title, desc, dueDate, priority, done) {
-
-    Project.prototype.addTodo(title, desc, dueDate, priority, done);
-}
