@@ -8,6 +8,13 @@ export function displaySideBar(projects) {
         const sideBar = document.createElement("aside");
     sideBar.classList = "side-bar";
 
+    displayProjects(projects, sideBar)
+
+    main.prepend(sideBar)
+    }
+}
+
+function displayProjects(projects, sideBar) {
     const defaultSections = document.createElement("div");
     defaultSections.classList = "default-sections"
     defaultSections.innerHTML = `
@@ -51,39 +58,4 @@ export function displaySideBar(projects) {
     addProjBtn.innerText = "+ Add Project";
     sideBar.appendChild(addProjBtn);
 
-    main.prepend(sideBar)
-    }
 }
-
-/*
-
-<aside class="side-bar">
-        <div class="default-sections">
-        <p>All To-Do's</p>
-        <p>Today's</p>
-        <p>Important</p>
-      </div>
-
-      <div class="projects">
-        <h2>Projects</h2>
-        <ul>
-          <li>
-            <span class="project-title">Project 1</span>
-            <div class="actions">
-              <button><i class="fa-solid fa-pencil"></i></button>
-              <button><i class="fa-solid fa-trash"></i></button>
-            </div>
-          </li>
-          <li>
-            <span class="project-title">Project 2</span>
-            <div class="actions">
-              <button><i class="fa-solid fa-pencil"></i></button>
-              <button><i class="fa-solid fa-trash"></i></button>
-            </div>
-          </li>
-        </ul>
-        <button id="add-project">+ Add Project</button>
-      </div>
-    </aside>
-
-*/
