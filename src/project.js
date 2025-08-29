@@ -1,4 +1,5 @@
 import { Todo } from "./todo";
+import { displayProjects } from "./sideBar";
 
 export class Project {
     constructor(name) {
@@ -7,7 +8,7 @@ export class Project {
         this.todos = [];
     }
 
-    addTodo(title, desc, dueDate, priority, done = false) { // change INDEX for ID later !!!
+    addTodo(title, desc, dueDate, priority, done = false) { 
         const todo = new Todo(title, desc, dueDate, priority, done);
         this.todos.push(todo)
     }
@@ -28,8 +29,6 @@ export function deleteProject(index, array) {
     array.splice(index, 1);
 }
 
-/*export function createTodo(title, desc, dueDate, priority, done = false) {
-    Project.prototype.addTodo()
-}*/
+
 
  

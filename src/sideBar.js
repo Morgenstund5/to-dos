@@ -1,3 +1,4 @@
+import { attachEventList, deleteProject } from "./project";
 
 export function displaySideBar(projects) {
     const existingSideBar = document.querySelector(".side-bar")
@@ -8,13 +9,18 @@ export function displaySideBar(projects) {
         const sideBar = document.createElement("aside");
     sideBar.classList = "side-bar";
 
-    displayProjects(projects, sideBar)
-
     main.prepend(sideBar)
+
+    displayProjects(projects)
+    
+    
+
     }
 }
 
-function displayProjects(projects, sideBar) {
+export function displayProjects(projects) {
+    const sideBar = document.querySelector(".side-bar")
+    sideBar.innerHTML = ``
     const defaultSections = document.createElement("div");
     defaultSections.classList = "default-sections"
     defaultSections.innerHTML = `
@@ -40,8 +46,8 @@ function displayProjects(projects, sideBar) {
         const actionsDiv = document.createElement("div")
         actionsDiv.classList = "actions";
         actionsDiv.innerHTML = `
-                                <button><i class="fa-solid fa-pencil"></i></button>
-                                <button><i class="fa-solid fa-trash"></i></button>
+                                <button class="edit-prj" data-id="${project.id}"><i class="fa-solid fa-pencil"></i></button>
+                                <button class="delete-prj" data-id="${project.id}"><i class="fa-solid fa-trash"></i></button>
                                 `
 
         projEl.appendChild(actionsDiv);
@@ -58,4 +64,17 @@ function displayProjects(projects, sideBar) {
     addProjBtn.innerText = "+ Add Project";
     sideBar.appendChild(addProjBtn);
 
+    const deletePrjBtn = document.querySelectorAll(".delete-prj")
+    deletePrjBtn.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const id = btn.dataset.id
+            const index = projects.findIndex(project => project.id === id)
+            if(index !== -1) {
+                deleteProject(index, projects);
+                displayProjects(projects)
+            }
+        })
+    })
+
 }
+
