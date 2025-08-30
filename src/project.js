@@ -28,7 +28,3 @@ export function addProject(name, array) {
 export function deleteProject(index, array) {
     array.splice(index, 1);
 }
-
-
-
- 

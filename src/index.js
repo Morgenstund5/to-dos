@@ -10,7 +10,8 @@ addProject("2nd Test", projects)
 addProject("3rd Test", projects)
 
 const toggleSideBar = document.getElementById("sidebar-toggle");
-toggleSideBar.addEventListener("click", () => {
+toggleSideBar.addEventListener("click", (e) => {
+    e.preventDefault()
     displaySideBar(projects);
 })
 
