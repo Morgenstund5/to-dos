@@ -3,7 +3,7 @@ import { addProject, attachEventList, deleteProject, Project } from "./project";
 import { displaySideBar, displayProjects } from "./sideBar";
 
 
-const projects = [];
+export const projects = [];
 
 addProject("Test", projects)
 addProject("2nd Test", projects)

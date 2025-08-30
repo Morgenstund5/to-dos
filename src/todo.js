@@ -1,4 +1,4 @@
-
+import { projects } from ".";
 
 export class Todo {
     constructor(title, desc, dueDate, priority, done = false) {
@@ -57,14 +57,25 @@ export function displayTodos(project) {
         todoActions.classList = "todo-actions";
         todoActions.innerHTML = `
                                     <button class="${todo.done ? "done-btn" : "not-done-btn"}">${todo.done ? "Done" : "Not Done"}</button>
-                                    <button class="edit-btn">Edit</button>
-                                    <button class="delete-btn">Delete</button>  
+                                    <button class="edit-todo-btn" data-id="${todo.id}">Edit</button>
+                                    <button class="delete-todo-btn" data-id="${todo.id}">Delete</button>  
                                 `
+
+        todosDiv.addEventListener("click", (e) => {
+            if (e.target.classList.contains("delete-todo-btn")) {
+              console.log(e.target.dataset.id);
+              const id = e.target.dataset.id
+              project.deleteTodo(id)
+              displayTodos(project)
+            }
+        });
         todoCard.appendChild(todoActions)
         
 
         
         todosDiv.appendChild(todoCard);
+
+        
     });}
     
     const addTodoBtn = document.createElement("button");
@@ -78,6 +89,8 @@ export function displayTodos(project) {
     addTodoBtn.addEventListener("click", () => {
         displayTodoForm(mainContent, project)
     })
+
+    
 }
 
 // title, desc, dueDate, priority, done = false
@@ -143,6 +156,14 @@ export function displayTodos(project) {
           displayTodos(project)
         })
     }
+
+
+
+
+
+
+
+
 /* 
 
 <div class="main-content">
